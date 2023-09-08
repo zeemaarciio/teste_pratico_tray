@@ -21,9 +21,6 @@ function cadastrar_vendedor($seller_name, $seller_email) {
 }
 
 function editar_vendedor($id, $nome, $email) {
-    var_dump($id);
-    var_dump($nome);
-    var_dump($email);
     $sql = $GLOBALS['pdo']->prepare("UPDATE sellers SET seller_name = :nome, seller_email = :email WHERE id = :id");
     $sql->bindValue(':nome', $nome);
     $sql->bindValue(':email', $email);
